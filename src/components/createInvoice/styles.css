@@ -1,0 +1,105 @@
+.invoice {
+    display: flex;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 12px;
+    justify-content: center;
+    width: 1200px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.firstRow {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.inputName {
+    display: flex;
+    flex-direction: column;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.total > p {
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.inputName > label {
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 5px;
+    text-align: left;
+}
+
+.input, .textarea{
+    font-size: 20px;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin: 10px 0px;
+}
+
+.subTitleSection {
+    background: bisque;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 12px;
+    flex-grow: 1;
+    padding-right: 15px;
+}
+
+.subTitle {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px 10px;
+    text-align: left;
+}
+
+.item {
+    width: 50%;
+}
+
+.quantity {
+    width: 15%;
+}
+
+.price {
+    width: 15%;
+}
+
+.action {
+    width: 10%;
+}
+
+.amount {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.remove {
+    border-radius: 12px;
+    height: 20px;
+    width: 20px;
+}
+
+.button {
+    background-color: #405cf5;
+    border-radius: 6px;
+    border-width: 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    height: 44px;
+    padding: 0 25px;
+}
