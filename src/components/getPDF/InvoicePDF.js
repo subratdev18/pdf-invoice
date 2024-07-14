@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
 import ItemsTable from './ItemsTable';
 
 const styles = StyleSheet.create({
@@ -40,14 +40,27 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 10
   },
+  imageContainer: {
+    flexDirection: 'row-reverse',
+  },
+  logo: {
+    width: 100,
+    height: 100,
+    objectFit: "contain",
+    borderRadius: 6,
+  }
 });
 
-const InvoicePDF = ({ billFrom, client, total, items }) => { // destructuring props
+const InvoicePDF = ({ logo, billFrom, client, total, items }) => { // destructuring props
+  // console.log("dueDate : ", billFrom)
   return (
     <Document>
       <Page size="A4" style={styles.page}>
         <View>
           <Text style={styles.header}>Invoice Form</Text>
+          <View style={styles.imageContainer}>
+            <Image src={logo} style={styles.logo}/>
+          </View>
           <View>
             <Text style={styles.name}>{billFrom.name}</Text>
           </View>
@@ -55,6 +68,16 @@ const InvoicePDF = ({ billFrom, client, total, items }) => { // destructuring pr
           <View style={styles.invoiceNumber}>
             <Text style={styles.label}>INVOICE NO.</Text>
             <Text style={styles.input}>{billFrom.invoiceNumber}</Text>
+          </View>
+
+          <View style={styles.invoiceNumber}>
+            <Text style={styles.label}>Invoice Date</Text>
+            <Text style={styles.input}>{billFrom.invoiceDate?.toString()}</Text>
+          </View>
+
+          <View style={styles.invoiceNumber}>
+            <Text style={styles.label}>Due Date</Text>
+            <Text style={styles.input}>{billFrom?.dueDate?.toString()}</Text>
           </View>
 
           <View style={styles.invoiceNumber}>
