@@ -5,7 +5,7 @@ import TableComponent from '../table';
 import InvoicePDF from '../getPDF/InvoicePDF'; 
 //  import ShowPreview from '../showPreview'; 
 import {  PDFDownloadLink,  PDFViewer }  from '@react-pdf/renderer'; 
-import './invoiceStyles.css'; 
+import './styles.css'; 
  
 //  import customParseFormat from 'dayjs/plugin/customParseFormat'; 
 //  dayjs.extend(customParseFormat); 
