@@ -1,105 +1,152 @@
-.invoice {
-    display: flex;
-    padding: 10px;
-    margin: 20px;
-    border-radius: 12px;
-    justify-content: center;
-    width: 1200px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+.invoice {  
+    /* display: flex;  */
+    padding: 15px; 
+    margin: 20px; 
+    border-radius: 12px; 
+    width: 80%; 
+    height: 80%; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+} 
+ 
+.title {  
+    font-size: 30px;  
+}  
+ 
+.uploadContainer {  
+    /* background-color: red;  */
+    display: flex; 
+    width: 100%; 
+    margin: 10px 0; 
+} 
+ 
+.details {  
+    display: flex; 
+    /* width: auto;  */
+}  
 
-.title {
-    font-size: 30px;
-}
+.detailsChild { 
+    text-align: left; 
+    padding: 10px; 
+    border: 2px solid black; 
+    border-radius: 8px; 
+    /* box-sizing: border-box;  */
+    width: 50%; 
+    /* flex-grow: 1;  */
+} 
 
-.firstRow {
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
-}
+.firstRow { 
+    display: flex; 
+    justify-content: space-between; 
+    flex-grow: 1; 
+    /* background-color: red;  */
+} 
 
-.inputName {
-    display: flex;
-    flex-direction: column;
-}
+.invoiceDatesAndNo { 
+    margin: 15px 0; 
+    width: 40%; 
+    /* position: fixed;  */
+    top: 50%; 
+    left: 50%; 
+} 
 
-.total {
-    display: flex;
-    justify-content: space-between;
-    font-size: 20px;
-}
+.invoiceDatesAndNoContainer { 
+    display: flex; 
+    margin: 10px 0; 
+} 
 
-.total > p {
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-}
+.invoiceDatesAndNoContainer > label { 
+    width: 100%; 
+} 
 
-.inputName > label {
-    font-size: 20px;
-    font-weight: 600;
-    margin-right: 5px;
-    text-align: left;
-}
+.inputContainer { 
+    font-size: 20px; 
+    border-radius: 5px; 
+    /* padding: 10px 10px 0;  */
+    margin: 0 10px; 
+} 
+
+.dateInputContainer { 
+    width: 100%; 
+    font-size: 20px; 
+    border-radius: 5px; 
+    margin: 0 10px; 
+} 
+
+.inputName { 
+    display: flex; 
+    flex-direction: column; 
+} 
+
+.total { 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 20px; 
+} 
+
+.total > p { 
+    align-items: center; 
+    justify-content: center; 
+    font-weight: 700; 
+} 
+
+.inputName, .invoiceDatesAndNoContainer > label { 
+    font-size: 20px; 
+    font-weight: 600; 
+    margin-right: 5px; 
+    text-align: left; 
+} 
 
 .input, .textarea{
-    font-size: 20px;
-    border-radius: 5px;
-    padding-left: 10px;
-    margin: 10px 0px;
-}
+    font-size: 20px; 
+    border-radius: 5px; 
+    padding-left: 10px; 
+    margin: 10px 0px; 
+} 
 
-.subTitleSection {
-    background: bisque;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 12px;
-    flex-grow: 1;
-    padding-right: 15px;
-}
+.subTitleSection { 
+    background: bisque; 
+    display: flex; 
+    justify-content: space-between; 
+    border-radius: 12px; 
+    flex-grow: 1; 
+    padding-right: 15px; 
+} 
 
-.subTitle {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 10px 10px;
-    text-align: left;
-}
+.subTitle { 
+    font-size: 20px; 
+    font-weight: 700; 
+    margin: 10px 10px; 
+    text-align: left; 
+} 
 
-.item {
-    width: 50%;
-}
+.item { 
+    width: 50%; 
+} 
 
-.quantity {
-    width: 15%;
-}
+.quantity { 
+    width: 15%; 
+} 
 
-.price {
-    width: 15%;
-}
+.price { 
+    width: 15%; 
+} 
 
-.action {
-    width: 10%;
-}
+.action { 
+    width: 10%; 
+} 
 
-.amount {
-    font-size: 18px;
-    font-weight: 700;
-}
+.amount { 
+    font-size: 18px; 
+    font-weight: 700; 
+} 
 
-.remove {
-    border-radius: 12px;
-    height: 20px;
-    width: 20px;
-}
+.remove { 
+    border-radius: 12px; 
+    height: 20px; 
+    width: 20px; 
+} 
 
-.button {
-    background-color: #405cf5;
-    border-radius: 6px;
-    border-width: 0;
-    box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
-    font-size: 18px;
-    height: 44px;
-    padding: 0 25px;
-}
+.button { 
+    cursor: pointer; 
+    margin: auto 0px; 
+} 
