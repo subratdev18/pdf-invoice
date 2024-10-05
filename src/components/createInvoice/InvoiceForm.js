@@ -4,7 +4,8 @@ import dayjs from 'dayjs';
 import TableComponent from '../table'; 
 import InvoicePDF from '../getPDF/InvoicePDF'; 
 //  import ShowPreview from '../showPreview'; 
-import {  PDFDownloadLink,  PDFViewer }  from '@react-pdf/renderer'; 
+import {  PDFDownloadLink,  PDFViewer }  from '@react-pdf/renderer';
+import InvoiceQRCode from '../invoiceQRCode';
 import './styles.css'; 
  
 //  import customParseFormat from 'dayjs/plugin/customParseFormat'; 
@@ -19,7 +20,7 @@ const InvoiceForm = () => {
    
 //  items description containing name,  price and quantity 
   const [items,  setItems] = useState([ 
-    {  key: 0,  item: '',  quantity: 1,  price: 1,  amount: 1 } ,  
+    {  key: 0,  itemDescription: '',  quantity: 1,  price: 1,  amount: 1 } ,  
   ]); 
  
 //  state for storing info about user creating Invoice 
@@ -65,9 +66,13 @@ const InvoiceForm = () => {
   } 
 
 //  to compute the items' total amount
-  const total = () => { 
-    return items.map(({ price,  quantity} ) => price * quantity).reduce((acc,  currValue) => acc + currValue,  0); 
-  } 
+  // const total = () => { 
+  //   return items.map(({ price,  quantity} ) => price * quantity).reduce((acc,  currValue) => acc + currValue,  0); 
+  // } 
+
+  const total = () => {
+    return items.reduce((sum, { price,  quantity}) => sum + quantity * price, 0).toFixed(2);
+  };
 
   const handleImage = (e) => { 
     console.log(e.target.files[0])
@@ -219,6 +224,8 @@ const InvoiceForm = () => {
           </div>
           <hr/>
 
+          <InvoiceQRCode billFrom={billFrom}  client={client}  totalAmount={total}  items={items} />
+
           <PDFDownloadLink document={ <InvoicePDF logo={ logo}  billFrom={ billFrom}  client={ client}  total={ total}  items={ items}  />}  fileName={ `Invoice-${ billFrom.invoiceId} .pdf`}  >
             { ({  blob,  url,  loading,  error } ) =>
                   loading ? "Loading..." : <Button type="primary" className='button'>Print Invoice</Button>
@@ -231,7 +238,7 @@ const InvoiceForm = () => {
             </PDFViewer>
         }  */} 
       </div>
-      { /* <ShowPreview billFrom={ billFrom}  client={ client}  items={ items}  total={ total}  /> */} 
+      {/* <ShowPreview billFrom={ billFrom}  client={ client}  items={ items}  total={ total}  /> */}
     </form>
   ); 
 } ; 
