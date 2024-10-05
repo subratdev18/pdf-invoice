@@ -1,6 +1,8 @@
 import React from 'react';
 import { Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
 import ItemsTable from './ItemsTable';
+import InvoiceQRCode from '../invoiceQRCode';
+
 
 const styles = StyleSheet.create({
   page: {
@@ -53,8 +55,18 @@ const styles = StyleSheet.create({
 
 const InvoicePDF = ({ logo, billFrom, client, total, items }) => { // destructuring props
   // console.log("dueDate : ", billFrom)
+
+  // const invoiceDetails = {
+  //   billFrom,
+  //   client,
+  //   total,
+  //   items
+  // }
+
   return (
     <Document>
+      {/* {invoiceDetails?.items && <InvoiceQRCode billFrom={billFrom}  client={client}  total={total}  items={items} /> } */}
+
       <Page size="A4" style={styles.page}>
         <View>
           <Text style={styles.header}>Invoice Form</Text>
